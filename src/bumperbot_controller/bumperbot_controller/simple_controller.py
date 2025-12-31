@@ -17,8 +17,8 @@ class SimpleController(Node):
         self.wheel_radius_ = self.get_parameter("wheel_radius").get_parameter_value().double_value
         self.wheel_separation_ = self.get_parameter("wheel_separation").get_parameter_value().double_value
 
-        self.get_logger().info("Using wheel_radius %f" % self.wheel_radius_)
-        self.get_logger().info("Using wheel_separation %f" % self.wheel_separation_)
+        self.get_logger().info("Using wheel_radius: %f" % self.wheel_radius_)
+        self.get_logger().info("Using wheel_separation: %f" % self.wheel_separation_)
 
         self.wheel_cmd_pub_ = self.create_publisher(Float64MultiArray, "simple_velocity_controller/commands", 10)
         self.vel_sub_ = self.create_subscription(TwistStamped, "bumperbot_controller/cmd_vel", self.velocityCallback, 10)
