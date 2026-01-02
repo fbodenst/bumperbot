@@ -46,7 +46,7 @@ class SimpleTFKinematics(Node):
 
         self.static_tf_broadcaster_.sendTransform(self.static_transform_stamped_)
 
-        self.get_logger().info("Publishing static transform %s and %s" % 
+        self.get_logger().info("Publishing static transform %s and %s." % 
                                (self.static_transform_stamped_.header.frame_id, self.static_transform_stamped_.child_frame_id))
         
         self.timer_ = self.create_timer(0.1, self.timerCallback)
